@@ -35,13 +35,24 @@ class MinhaAplicacao extends StatelessWidget {
   }
 
   Widget CorpoDaAplicacao() {
-    return Center(
-      child: Container(
-        child: Image.asset(
-          "assets/images/logo.jpg",
-          fit: BoxFit.fitWidth,
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: SliderDeImagens(),
         ),
-      ),
+
+        Expanded(
+          flex: 3,
+          child: Container(
+            width: double.infinity,
+            child: Image.asset(
+              "assets/images/logo.jpg",
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -61,7 +72,7 @@ class MinhaAplicacao extends StatelessWidget {
                 'Menu',
                 style: TextStyle(
                   color: temaSecundario,
-                  fontSize: 20, // Ajuste o tamanho da fonte conforme necessário
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -115,6 +126,24 @@ class MinhaAplicacao extends StatelessWidget {
       onPressed: () {},
       tooltip: 'Meu Perfil',
       child: const Icon(Icons.home),
+    );
+  }
+}
+
+class SliderDeImagens extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Image.asset(
+          'assets/images/image1.jpg',
+          fit: BoxFit.contain,
+        ),
+        Image.asset(
+          'assets/images/image2.jpg',
+          fit: BoxFit.contain,
+        ),
+      ],
     );
   }
 }
