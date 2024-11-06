@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vestibular_verao.dart';
 import 'espaco_do_estudante.dart';
+import 'espaco_do_servidor.dart'; // Importando a página EspacoDoServidor
 
 void main() {
   runApp(MinhaAplicacao());
@@ -88,12 +89,23 @@ class MinhaAplicacao extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.person),
+                leading: Icon(Icons.event),
                 title: Text('Vestibular Verão/2024'),
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => vestibular_verao()),
+                  );
+                },
+              ),
+              // Navegação para o "Espaço do Servidor"
+              ListTile(
+                leading: Icon(Icons.admin_panel_settings),
+                title: Text('Espaço do Servidor'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => espaco_do_servidor()),
                   );
                 },
               ),
@@ -127,7 +139,6 @@ class MinhaAplicacao extends StatelessWidget {
     );
   }
 }
-
 
 class SliderDeImagens extends StatelessWidget {
   @override

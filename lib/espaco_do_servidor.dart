@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'espaco_do_estudante.dart';
-import 'espaco_do_servidor.dart'; // Importando a página EspacoDoServidor
+import 'espaco_do_estudante.dart'; // Certifique-se de que o caminho está correto
+import 'vestibular_verao.dart'; // Certifique-se de que o caminho está correto
 
-class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para seguir a convenção
-  final Color temaPrincipal = Colors.green;
-  final Color temaSecundario = Colors.green[100] ?? Color.fromARGB(255, 200, 230, 201);
+class espaco_do_servidor extends StatelessWidget {
+  final Color temaPrincipal = Colors.blue; // Cor de tema principal para o servidor
+  final Color temaSecundario = Colors.blue[100] ?? Color.fromARGB(255, 200, 230, 255);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: temaSecundario,
       appBar: AppBar(
-        title: Text('Vestibular Verão/2024'),
+        title: Text('Espaço do Servidor'),
         backgroundColor: temaPrincipal,
       ),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(16.0),
           child: Text(
-            'Página com informações sobre o Vestibular de Verão do IFSul!',
+            'Bem-vindo ao Espaço do Servidor!',
             style: TextStyle(fontSize: 24, color: temaPrincipal),
             textAlign: TextAlign.center,
           ),
@@ -60,19 +60,19 @@ class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para
               Navigator.pop(context); // Fecha o drawer antes de navegar
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Ajustado o nome da classe
+                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Navega para o Espaço do Estudante
               );
             },
           ),
-          // Navegação para o "Espaço do Servidor"
+          // Navegação para o "Vestibular Verão/2024"
           ListTile(
-            leading: Icon(Icons.admin_panel_settings),
-            title: Text('Espaço do Servidor'),
+            leading: Icon(Icons.event),
+            title: Text('Vestibular Verão/2024'),
             onTap: () {
               Navigator.pop(context); // Fecha o drawer antes de navegar
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_servidor()), // Navega para o Espaço do Servidor
+                MaterialPageRoute(builder: (context) => vestibular_verao()), // Navega para o Vestibular Verão
               );
             },
           ),
