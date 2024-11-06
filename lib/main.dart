@@ -37,13 +37,11 @@ class MinhaAplicacao extends StatelessWidget {
   Widget CorpoDaAplicacao() {
     return Column(
       children: [
-        Expanded(
-          flex: 2,
+        Container(
+          height: 117,
           child: SliderDeImagens(),
         ),
-
         Expanded(
-          flex: 3,
           child: Container(
             width: double.infinity,
             child: Image.asset(
@@ -130,10 +128,11 @@ class MinhaAplicacao extends StatelessWidget {
   }
 }
 
+
 class SliderDeImagens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return PageView(
       children: [
         Image.asset(
           'assets/images/image1.jpg',
