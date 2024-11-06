@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'espaco_do_estudante.dart'; // Certifique-se de que o caminho está correto
-import 'vestibular_verao.dart'; // Certifique-se de que o caminho está correto
+import 'espaco_do_estudante.dart'; 
+import 'vestibular_verao.dart';
 
 class espaco_do_servidor extends StatelessWidget {
   final Color temaPrincipal = Colors.green;
