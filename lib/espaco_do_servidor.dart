@@ -3,8 +3,8 @@ import 'espaco_do_estudante.dart'; // Certifique-se de que o caminho está corre
 import 'vestibular_verao.dart'; // Certifique-se de que o caminho está correto
 
 class espaco_do_servidor extends StatelessWidget {
-  final Color temaPrincipal = Colors.blue; // Cor de tema principal para o servidor
-  final Color temaSecundario = Colors.blue[100] ?? Color.fromARGB(255, 200, 230, 255);
+  final Color temaPrincipal = Colors.green;
+  final Color temaSecundario = Colors.green[100] ?? Color.fromARGB(255, 200, 230, 201);
 
   @override
   Widget build(BuildContext context) {
