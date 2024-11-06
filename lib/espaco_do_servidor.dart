@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'espaco_do_estudante.dart'; 
+import 'espaco_do_estudante.dart';
 import 'vestibular_verao.dart';
 
 class espaco_do_servidor extends StatelessWidget {
@@ -52,27 +52,25 @@ class espaco_do_servidor extends StatelessWidget {
               ),
             ),
           ),
-          // Navegação para o "Espaço do Estudante"
           ListTile(
             leading: Icon(Icons.school),
             title: Text('Espaço do Estudante'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Navega para o Espaço do Estudante
+                MaterialPageRoute(builder: (context) => espaco_do_estudante()),
               );
             },
           ),
-          // Navegação para o "Vestibular Verão/2024"
           ListTile(
             leading: Icon(Icons.event),
             title: Text('Vestibular Verão/2024'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => vestibular_verao()), // Navega para o Vestibular Verão
+                MaterialPageRoute(builder: (context) => vestibular_verao()),
               );
             },
           ),
@@ -95,7 +93,6 @@ class espaco_do_servidor extends StatelessWidget {
       ],
       onTap: (index) {
         if (index == 2) {
-          // Ao clicar no botão Home, volta para a página inicial
           Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         }
       },
@@ -105,7 +102,6 @@ class espaco_do_servidor extends StatelessWidget {
   Widget BotaoFlutuante(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Levar de volta à página inicial
         Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       },
       tooltip: 'Meu Perfil',

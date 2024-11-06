@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'espaco_do_estudante.dart';
-import 'espaco_do_servidor.dart'; // Importando a página EspacoDoServidor
+import 'espaco_do_servidor.dart';
 
-class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para seguir a convenção
+class vestibular_verao extends StatelessWidget {
   final Color temaPrincipal = Colors.green;
   final Color temaSecundario = Colors.green[100] ?? Color.fromARGB(255, 200, 230, 201);
 
@@ -52,15 +52,14 @@ class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para
               ),
             ),
           ),
-          // Navegação para o "Espaço do Estudante"
           ListTile(
             leading: Icon(Icons.school),
             title: Text('Espaço do Estudante'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Ajustado o nome da classe
+                MaterialPageRoute(builder: (context) => espaco_do_estudante()),
               );
             },
           ),
@@ -72,7 +71,7 @@ class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para
               Navigator.pop(context); // Fecha o drawer antes de navegar
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_servidor()), // Navega para o Espaço do Servidor
+                MaterialPageRoute(builder: (context) => espaco_do_servidor()),
               );
             },
           ),
@@ -95,7 +94,6 @@ class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para
       ],
       onTap: (index) {
         if (index == 2) {
-          // Ao clicar no botão Home, volta para a página inicial
           Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         }
       },
@@ -105,7 +103,6 @@ class vestibular_verao extends StatelessWidget { // Nome de classe ajustado para
   Widget BotaoFlutuante(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Levar de volta à página inicial
         Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       },
       tooltip: 'Meu Perfil',

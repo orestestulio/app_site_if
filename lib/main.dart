@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vestibular_verao.dart';
 import 'espaco_do_estudante.dart';
-import 'espaco_do_servidor.dart'; // Importando a página EspacoDoServidor
+import 'espaco_do_servidor.dart';
 
 void main() {
   runApp(MinhaAplicacao());
@@ -98,7 +98,6 @@ class MinhaAplicacao extends StatelessWidget {
                   );
                 },
               ),
-              // Navegação para o "Espaço do Servidor"
               ListTile(
                 leading: Icon(Icons.admin_panel_settings),
                 title: Text('Espaço do Servidor'),

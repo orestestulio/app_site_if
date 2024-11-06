@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'vestibular_verao.dart'; // Certifique-se de que o caminho está correto
-import 'espaco_do_servidor.dart'; // Certifique-se de que o caminho está correto
+import 'vestibular_verao.dart';
+import 'espaco_do_servidor.dart';
 
 class espaco_do_estudante extends StatelessWidget {
   final Color temaPrincipal = Colors.green;
@@ -52,39 +52,36 @@ class espaco_do_estudante extends StatelessWidget {
               ),
             ),
           ),
-          // Navegação para o "Espaço do Estudante"
           ListTile(
             leading: Icon(Icons.school),
             title: Text('Espaço do Estudante'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Navega para o Espaço do Estudante
+                MaterialPageRoute(builder: (context) => espaco_do_estudante()),
               );
             },
           ),
-          // Navegação para o "Vestibular Verão/2024"
           ListTile(
             leading: Icon(Icons.event),
             title: Text('Vestibular Verão/2024'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => vestibular_verao()), // Navega para o Vestibular Verão
+                MaterialPageRoute(builder: (context) => vestibular_verao()),
               );
             },
           ),
-          // Navegação para o "Espaço do Servidor"
           ListTile(
             leading: Icon(Icons.admin_panel_settings),
             title: Text('Espaço do Servidor'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EspacoDoServidor()), // Navega para o Espaço do Servidor
+                MaterialPageRoute(builder: (context) => EspacoDoServidor()),
               );
             },
           ),
@@ -107,7 +104,6 @@ class espaco_do_estudante extends StatelessWidget {
       ],
       onTap: (index) {
         if (index == 2) {
-          // Ao clicar no botão Home, volta para a página inicial
           Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         }
       },
@@ -117,7 +113,6 @@ class espaco_do_estudante extends StatelessWidget {
   Widget BotaoFlutuante(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Levar de volta à página inicial
         Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       },
       tooltip: 'Meu Perfil',
@@ -176,39 +171,36 @@ class EspacoDoServidor extends StatelessWidget {
               ),
             ),
           ),
-          // Navegação para o "Espaço do Estudante"
           ListTile(
             leading: Icon(Icons.school),
             title: Text('Espaço do Estudante'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => espaco_do_estudante()), // Navega para o Espaço do Estudante
+                MaterialPageRoute(builder: (context) => espaco_do_estudante()),
               );
             },
           ),
-          // Navegação para o "Vestibular Verão/2024"
           ListTile(
             leading: Icon(Icons.event),
             title: Text('Vestibular Verão/2024'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => vestibular_verao()), // Navega para o Vestibular Verão
+                MaterialPageRoute(builder: (context) => vestibular_verao()),
               );
             },
           ),
-          // Navegação para o "Espaço do Servidor"
           ListTile(
             leading: Icon(Icons.admin_panel_settings),
             title: Text('Espaço do Servidor'),
             onTap: () {
-              Navigator.pop(context); // Fecha o drawer antes de navegar
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => EspacoDoServidor()), // Navega para o Espaço do Servidor
+                MaterialPageRoute(builder: (context) => EspacoDoServidor()),
               );
             },
           ),
@@ -231,7 +223,6 @@ class EspacoDoServidor extends StatelessWidget {
       ],
       onTap: (index) {
         if (index == 2) {
-          // Ao clicar no botão Home, volta para a página inicial
           Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         }
       },
@@ -241,7 +232,6 @@ class EspacoDoServidor extends StatelessWidget {
   Widget BotaoFlutuante(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Levar de volta à página inicial
         Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
       },
       tooltip: 'Meu Perfil',
