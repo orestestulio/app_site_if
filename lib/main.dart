@@ -2,40 +2,83 @@ import 'package:flutter/material.dart';
 import 'vestibular_verao.dart';
 import 'espaco_do_estudante.dart';
 import 'espaco_do_servidor.dart';
+import 'estilos_visuais.dart';
 
 void main() {
   runApp(MinhaAplicacao());
 }
 
 class MinhaAplicacao extends StatelessWidget {
-  final Color temaPrincipal = Colors.green;
-  final Color temaSecundario = Colors.green[100] ?? Color.fromARGB(255, 200, 230, 201);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Builder(
         builder: (context) => Scaffold(
-          backgroundColor: temaSecundario,
-          appBar: BarraSuperior(),
+          backgroundColor: estilos_visuais.temaSecundario,
+          appBar: estilos_visuais.barraSuperior("IFSul Campus Camaquã"),
           body: CorpoDaAplicacao(),
-          drawer: MenuLateral(context),
-          bottomNavigationBar: MenuInferior(),
+          drawer: estilos_visuais.menuLateral(
+            context,
+            [
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text('Espaço do Estudante'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => espaco_do_estudante()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.event),
+                title: const Text('Vestibular Verão/2024'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => vestibular_verao()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.admin_panel_settings),
+                title: const Text('Espaço do Servidor'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => espaco_do_servidor()),
+                  );
+                },
+              ),
+            ],
+          ),
+          bottomNavigationBar: estilos_visuais.menuInferior(
+            const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.message),
+                label: 'Mensagens',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Configurações',
+              ),
+            ],
+          ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: BotaoFlutuante(),
+          floatingActionButton: estilos_visuais.botaoFlutuante(
+                () {},
+            Icons.home,
+            'Meu Perfil',
+          ),
         ),
       ),
     );
   }
+}
 
-  AppBar BarraSuperior() {
-    return AppBar(
-      title: Text("IFSul Campus Camaquã"),
-      backgroundColor: temaPrincipal,
-    );
-  }
-
-  Widget CorpoDaAplicacao() {
+class CorpoDaAplicacao extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -52,89 +95,6 @@ class MinhaAplicacao extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-
-  Drawer MenuLateral(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: temaPrincipal,
-            ),
-            child: Container(
-              height: 10,
-              alignment: Alignment.center,
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: temaSecundario,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),
-          Column(
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Espaço do Estudante'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => espaco_do_estudante()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.event),
-                title: Text('Vestibular Verão/2024'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => vestibular_verao()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.admin_panel_settings),
-                title: Text('Espaço do Servidor'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => espaco_do_servidor()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget MenuInferior() {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.message),
-          label: 'Mensagens',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Configurações',
-        ),
-      ],
-    );
-  }
-
-  Widget BotaoFlutuante() {
-    return FloatingActionButton(
-      onPressed: () {},
-      tooltip: 'Meu Perfil',
-      child: const Icon(Icons.home),
     );
   }
 }
